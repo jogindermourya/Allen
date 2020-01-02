@@ -1,4 +1,18 @@
 /*----------------------------------------------------
+@File: Default Styles
+@Author: Md. Shahadat Hussain
+@URL: https://themeforest.net/user/droitthemes
+
+This file contains the styling for the actual template, this
+is the file you need to edit to change the look of the
+template.
+---------------------------------------------------- */
+/*=====================================================================
+@Template Name: 
+@Author: Md. Shahadat Hussain
+@Developed By: Rony
+@Developer URL: https://themeforest.net/user/droitthemes
+
 @Default Styles
 
 Table of Content:
@@ -1023,11 +1037,8 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 .menu > .nav-item {
   position: relative;
-  padding-bottom: 25px;
-  padding-top: 25px;
-  margin-left: 20px;
-  margin-right: 20px;
-
+  padding-bottom: 35px;
+  padding-top: 35px;
 }
 
 .menu > .nav-item > .nav-link {
@@ -1044,7 +1055,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   content: "";
   width: 0;
   height: 1px;
-  background: #2781D1;
+  background: #6754e2;
   position: absolute;
   bottom: 0;
   left: auto;
@@ -1063,7 +1074,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   border: 0px;
   margin: 0px;
   border-radius: 0px;
-  left: 0px;
+  left: -40px;
   min-width: 200px;
   padding: 0px;
   background: #fff;
@@ -1487,7 +1498,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .menu > .nav-item + .nav-item {
-  /* margin-left: 45px; */
+  margin-left: 45px;
 }
 
 .menu > .nav-item.active .nav-link:before {
@@ -1999,7 +2010,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 /*========= hamburger menu css ========*/
 .navbar-toggler {
   padding: 0px;
-  margin-left: 0px;
+  margin-left: 20px;
 }
 
 .navbar-toggler:focus {
@@ -2029,7 +2040,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   left: 0;
   margin: 4px 0;
   display: block;
-  background: #2582D6;
+  background: #5e2ced;
   border-radius: 3px;
   -webkit-transition: .2s ease-in-out;
   -o-transition: .2s ease-in-out;
@@ -2066,7 +2077,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 .menu_toggle .hamburger-cross span {
   display: block;
-  background: #2582D6;
+  background: #5e2ced;
   border-radius: 3px;
   -webkit-transition: .2s ease-in-out;
   -o-transition: .2s ease-in-out;
@@ -2109,14 +2120,12 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   -webkit-transition-delay: .4s;
   -o-transition-delay: .4s;
   transition-delay: .4s;
-  width: 80%;
 }
 
 .collapsed .menu_toggle .hamburger span:nth-child(3) {
   -webkit-transition-delay: .5s;
   -o-transition-delay: .5s;
   transition-delay: .5s;
-  width: 50%;
 }
 
 .collapsed .menu_toggle .hamburger-cross span:nth-child(1) {
@@ -2185,34 +2194,12 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .header_top {
-  padding: 2px 0px;
-  transition: inherit;
+  padding: 12px 0px;
 }
-
-.header-decor{ background: #fff; 
-     -webkit-box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06); 
-      box-shadow: 0px 4px 6px 0px rgba(12, 0, 46, 0.06);}
 
 .header_contact_info {
   margin-bottom: 0;
 }
-
- .arrrowmenu{ border-radius: 8px; margin-top: 20px;}
- .arrrowmenu:before {
-  position: absolute;
-  z-index: -5;
-  bottom: 100%;
-  left: 20px;
-  display: block;
-  width: 16px;
-  height: 16px;
-  content: '';
-  transform: rotate(-45deg) translateY(1rem);
-  border-radius: .2rem;
-  background: #fff;
-  box-shadow: none;
-}
-
 
 .header_contact_info li {
   display: inline-block;
@@ -2223,7 +2210,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   text-transform: capitalize;
 }
 
-/* .header_contact_info li:before {
+.header_contact_info li:before {
   content: "";
   width: 1px;
   height: 12px;
@@ -2232,7 +2219,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   display: inline-block;
   position: relative;
   margin: 0px 22px 0px 20px;
-} */
+}
 
 .header_contact_info li:first-child:before {
   display: none;
@@ -2284,7 +2271,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .header_area_six + section {
-  /* margin-top: 144px; */
+  margin-top: 144px;
 }
 
 .header_area_seven .header_top {
@@ -2602,10 +2589,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .header_area.navbar_fixed.header_area_six .header_top {
-  opacity: 0;
-  height: 0;
-  transition: inherit;
-  padding: 0;
+  display: none;
 }
 
 .security_btn {
@@ -3077,17 +3061,11 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   -webkit-transform: translateY(3rem);
   -ms-transform: translateY(3rem);
   transform: translateY(3rem);
-  -webkit-transition: opacity .5s .6s ease,
- -webkit-transform .5s .6s ease;
-  transition: opacity .5s .6s ease,
- -webkit-transform .5s .6s ease;
-  -o-transition: transform .5s .6s ease,
- opacity .5s .6s ease;
-  transition: transform .5s .6s ease,
- opacity .5s .6s ease;
-  transition: transform .5s .6s ease,
- opacity .5s .6s ease,
- -webkit-transform .5s .6s ease;
+  -webkit-transition: opacity .5s .6s ease, -webkit-transform .5s .6s ease;
+  transition: opacity .5s .6s ease, -webkit-transform .5s .6s ease;
+  -o-transition: transform .5s .6s ease, opacity .5s .6s ease;
+  transition: transform .5s .6s ease, opacity .5s .6s ease;
+  transition: transform .5s .6s ease, opacity .5s .6s ease, -webkit-transform .5s .6s ease;
   list-style: none;
   padding-left: 18%;
   padding-right: 100px;
@@ -3346,11 +3324,10 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 /*============== slider_area css ==============*/
 .slider_area {
-  background-image: -moz-linear-gradient(40deg, #2979c0 0%, #1875ca 90%);
-  background-image: -webkit-linear-gradient(40deg, #2979c0 0%, #1875ca 90%);
-  background-image: -ms-linear-gradient(40deg, #2979c0 0%, #1875ca 90%);
-  /* height: 930px; */
-  margin-top: 96px;
+  background-image: -moz-linear-gradient(40deg, #1786d8 0%, #00aff0 100%);
+  background-image: -webkit-linear-gradient(40deg, #1786d8 0%, #00aff0 100%);
+  background-image: -ms-linear-gradient(40deg, #1786d8 0%, #00aff0 100%);
+  height: 930px;
   background-size: cover;
   background-position: 50%;
   position: relative;
@@ -3414,7 +3391,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 }
 
 .slider_content {
-  /* padding-top: 200px; */
+  padding-top: 200px;
 }
 
 .slider_content h2, .slider_content p {
@@ -8577,14 +8554,14 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 
 .price_content .price_item .price_btn {
   border-radius: 45px;
-  color: #3191E8;
-  border-color: #3191E8;
+  color: #00aff0;
+  border-color: #00aff0;
   padding: 0px 36px;
 }
 
 .price_content .price_item .price_btn:hover {
   color: #fff;
-  background: #3191E8;
+  background: #00aff0;
 }
 
 .price_content .price_item:hover {
@@ -11928,12 +11905,6 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   font: 400 15px/26px "Poppins", sans-serif;
   color: #677294;
 }
-
-
-.allen-header {background: #2582D6;}
-.allen-header .header_contact_info li a{ color: #fff!important; padding: 0 8px;}
-.allen-header .header_contact_info li a:hover{ color: #fff!important;}
-
 
 /*====================================================*/
 /*====================================================*/
@@ -20818,15 +20789,15 @@ a .h_head:hover {
 /*====================================================*/
 /*====================================================*/
 .banner_top .subcribes .btn_submit, .s_features_item.s_features_item_two .s_features_content .learn_btn:hover:before, .price_btn:hover, .testimonial_title .owl-prev:hover, .testimonial_title .owl-next:hover {
-  background: #2781D1;
+  background: #6754e2;
 }
 
 .banner_top .subcribes .form-control:focus, .price_btn, .s_subcribes .form-control, .f_widget.about-widget .f_list li a:before {
-  border-color: #2781D1;
+  border-color: #6754e2;
 }
 
 .s_features_item.s_features_item_two .s_features_content .learn_btn:hover, .price_btn, .s_subcribes .btn-submit, .f_widget.about-widget .f_list li a:hover, .f_widget .widget-wrap p a:hover, .footer_bottom a, .menu > .nav-item:hover .nav-link, .menu > .nav-item.active .nav-link, .menu > .nav-item.submenu.mega_menu.mega_menu_two .mega_menu_inner .dropdown-menu .nav-item .item .text:hover, .menu > .nav-item.submenu .dropdown-menu .nav-item:hover > .nav-link, .menu > .nav-item.submenu .dropdown-menu .nav-item:focus > .nav-link, .menu > .nav-item.submenu .dropdown-menu .nav-item.active > .nav-link, .footer_bottom a:hover {
-  color: #2781D1;
+  color: #6754e2;
 }
 
 .w_menu .nav-item:hover .nav-link, .w_menu .nav-item.active .nav-link {
@@ -20834,7 +20805,7 @@ a .h_head:hover {
 }
 
 .menu_two .w_menu > .nav-item.submenu .dropdown-menu .nav-item:hover > .nav-link, .menu_two .w_menu > .nav-item.submenu .dropdown-menu .nav-item:focus > .nav-link, .menu_two .w_menu > .nav-item.submenu .dropdown-menu .nav-item.active > .nav-link, .nav_right_btn .login_btn.active, .header_area.navbar_fixed .menu_two .nav_right_btn .login_btn.active, .header_area.navbar_fixed .menu_two .nav_right_btn .login_btn:hover, .slider_btn {
-  color: #2781D1;
+  color: #00aff0;
 }
 
 .header_area.navbar_fixed .menu_two .nav_right_btn .login_btn.active, .header_area.navbar_fixed .menu_two .nav_right_btn .login_btn:hover {
@@ -20842,7 +20813,7 @@ a .h_head:hover {
 }
 
 .header_area.navbar_fixed .menu_two .nav_right_btn .login_btn.active:hover, .slider_btn:hover, .price_tab .hover_bg, .f_widget.about-widget .f_list li a:before {
-  background: #2781D1;
+  background: #00aff0;
 }
 
 .startup_tab .nav-item:nth-child(1) .icon {
@@ -25107,25 +25078,6 @@ a .h_head:hover {
   }
 }
 
+/*====================================================*/
 
-
-
-.onlineenqury_btn {
-  margin-top: 8px;
-  font-size: 14px;
-  border: 2px solid #6cac17;
-  padding: 2px 16px;
-  border-radius: 50px;
-  background: #6cac17;
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 11, 40, 0.1);
-  box-shadow: 0px 10px 15px 0px rgba(0, 11, 40, 0.1);
-  color: #fff;
-}
-.onlineenqury_btn:hover {
-  font-size: 14px;
-  border: 2px solid #3191E8;
-  background: #3191E8;
-  
-}
-
-
+/*# sourceMappingURL=style.css.map */
