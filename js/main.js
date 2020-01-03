@@ -383,7 +383,41 @@
             })
         }
     }
+   
     appScreenshot();
+
+ function appScreenshotHomeslider() {
+        var app_screenshotSlider = $(".homeslider");
+        if (app_screenshotSlider.length) {
+            app_screenshotSlider.owlCarousel({
+                loop: true,
+                margin: 10,
+                items: 1,
+                autoplay: true,
+                smartSpeed: 2000,
+                responsiveClass: true,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    650: {
+                        items: 1,
+                    },
+                    776: {
+                        items: 1,
+                    },
+                    1199: {
+                        items: 1,
+                    },
+                },
+            })
+        }
+    }
+
+    appScreenshotHomeslider();
+
 
     /*-------------------------------------------------------------------------------
 	  pr_slider js
