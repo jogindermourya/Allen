@@ -4,7 +4,7 @@
 
     /*-------------------------------------------------------------------------------
 	  Navbar 
-	-------------------------------------------------------------------------------*/ 
+	-------------------------------------------------------------------------------*/
     function navbarFixed() {
         if ($('.header_area').length) {
             $(window).scroll(function () {
@@ -38,6 +38,16 @@
     $('.offcanfas_menu .dropdown').on('hide.bs.dropdown', function (e) {
         $(this).find('.dropdown-menu').first().stop(true, true).slideUp(500);
     });
+
+
+    /*------------------------------------------------------------------------------- 
+    onload Notification banner
+    -----------------------------------------------------------------------------*/
+    $(window).on('load', function () {
+        //$('#notificationbanner').modal('show');
+    });
+
+
 
     /*-------------------------------------------------------------------------------
 	  mCustomScrollbar js
@@ -101,6 +111,158 @@
         }
     }
     serviceSlider();
+
+
+    // Course slider
+    function courseSlider() {
+        var courses_slider = $(".courses_carousel");
+        if (courses_slider.length) {
+            courses_slider.owlCarousel({
+                loop: false,
+                margin: 30,
+                items: 4,
+                autoplay: false,
+                smartSpeed: 1000,
+                responsiveClass: true,
+                nav: true,
+                dots: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right "></i>'],
+                responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    578: {
+                        items: 2,
+                        stagePadding: 0,
+                    },
+                    992: {
+                        items: 4,
+                        stagePadding: 0,
+                    },
+                    1200: {
+                        items: 4,
+                    }
+                },
+            })
+        }
+    }
+    courseSlider();
+
+    // Home slider
+
+    function appScreenshotHomeslider() {
+        var app_screenshotSlider = $(".homeslider");
+        if (app_screenshotSlider.length) {
+            app_screenshotSlider.owlCarousel({
+                loop: true,
+                margin: 10,
+                items: 1,
+                autoplay: true,
+                smartSpeed: 2000,
+                responsiveClass: true,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    650: {
+                        items: 1,
+                    },
+                    776: {
+                        items: 1,
+                    },
+                    1199: {
+                        items: 1,
+                    },
+                },
+            })
+        }
+    }
+
+    appScreenshotHomeslider();
+
+
+    /*---------------------------------------------------------------------------------- 
+    App Show slider---------------------------------------------------------------------*/
+    function appshowSlider() {
+        var appshow_slider = $(".appshow_carousel");
+        if (appshow_slider.length) {
+            appshow_slider.owlCarousel({
+                loop: true,
+                margin: 30,
+                items:1,
+                autoplay: false,
+                smartSpeed: 1000,
+                responsiveClass: true,
+                nav: true,
+                dots: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right "></i>'],
+                 responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    578: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    992: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    1200: {
+                        items: 1,
+                    }
+                },
+            })
+        }
+    }
+    appshowSlider();
+
+
+
+ /*---------------------------------------------------------------------------------- 
+  Course slider----------------------------------------------------------------*/
+    function courseSlider() {
+        var courses_slider = $(".courses_carousel");
+        if (courses_slider.length) {
+            courses_slider.owlCarousel({
+                loop: true,
+                margin: 30,
+                items: 4,
+                autoplay: false,
+                smartSpeed: 1000,
+                responsiveClass: true,
+                nav: true,
+                dots: false,
+                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right "></i>'],
+                 responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 0,
+                    },
+                    578: {
+                        items: 2,
+                        stagePadding: 0,
+                    },
+                    992: {
+                        items: 4,
+                        stagePadding: 0,
+                    },
+                    1200: {
+                        items: 4,
+                    }
+                },
+            })
+        }
+    }
+    courseSlider();
+
+
+
+
 
     /*-------------------------------------------------------------------------------
 	  about_img_slider js
@@ -177,7 +339,7 @@
         }
     }
     feedbackSlider();
-    
+
     function EventSlider() {
         var event_slider = $(".event_team_slider");
         if (event_slider.length) {
@@ -303,9 +465,9 @@
     erpTestimonial();
 
 
-   /*-------------------------------------------------------------------------------
-	  testimonial_slider js
-	-------------------------------------------------------------------------------*/
+    /*-------------------------------------------------------------------------------
+       testimonial_slider js
+     -------------------------------------------------------------------------------*/
     function testimonialSlider() {
         var testimonialSlider = $(".testimonial_slider");
         if (testimonialSlider.length) {
@@ -326,7 +488,7 @@
         }
     }
     testimonialSlider();
-    
+
     /*-------------------------------------------------------------------------------
 	  app_testimonial_slider js
 	-------------------------------------------------------------------------------*/
@@ -383,41 +545,8 @@
             })
         }
     }
-   
+
     appScreenshot();
-
- function appScreenshotHomeslider() {
-        var app_screenshotSlider = $(".homeslider");
-        if (app_screenshotSlider.length) {
-            app_screenshotSlider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 1,
-                autoplay: true,
-                smartSpeed: 2000,
-                responsiveClass: true,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    650: {
-                        items: 1,
-                    },
-                    776: {
-                        items: 1,
-                    },
-                    1199: {
-                        items: 1,
-                    },
-                },
-            })
-        }
-    }
-
-    appScreenshotHomeslider();
-
 
     /*-------------------------------------------------------------------------------
 	  pr_slider js
@@ -1039,5 +1168,10 @@
         }
     }
     ppTestislider();
+
+
+
+
+
 
 })(jQuery)

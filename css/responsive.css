@@ -2794,7 +2794,7 @@
         padding-left: 0;
     }
      .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev{
-        opacity: 0;
+        opacity: 1;
     }
     .service_carousel:hover .owl-nav .owl-next,.service_carousel:hover .owl-nav .owl-prev{
         opacity: 1;
