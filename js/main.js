@@ -44,11 +44,10 @@
     onload Notification banner
     -----------------------------------------------------------------------------*/
     $(window).on('load', function () {
-        //$('#notificationbanner').modal('show');
+        // $('#notificationbanner').modal('show');
     });
 
-
-
+ 
     /*-------------------------------------------------------------------------------
 	  mCustomScrollbar js
 	-------------------------------------------------------------------------------*/
@@ -122,7 +121,7 @@
                 margin: 30,
                 items: 4,
                 autoplay: false,
-                smartSpeed: 1000,
+                smartSpeed: 500,
                 responsiveClass: true,
                 nav: true,
                 dots: false,
@@ -155,14 +154,16 @@
         var app_screenshotSlider = $(".homeslider");
         if (app_screenshotSlider.length) {
             app_screenshotSlider.owlCarousel({
-                loop: true,
+                loop: false,
                 margin: 10,
                 items: 1,
                 autoplay: true,
-                smartSpeed: 2000,
+                slidesToScroll: 0,
+                smartSpeed: 450,
                 responsiveClass: true,
                 nav: false,
                 dots: true,
+                autoplayHoverPause:true,
                 responsive: {
                     0: {
                         items: 1
@@ -262,6 +263,41 @@
 
 
 
+ /*---------------------------------------------------------------------------------- 
+  Course slider----------------------------------------------------------------*/
+  function eventSlider() {
+    var event_slider = $(".event_carousel");
+    if (event_slider.length) {
+        event_slider.owlCarousel({
+            loop: false,
+            margin: 5,
+            items: 4,
+            autoplay: false,
+            smartSpeed: 1000,
+            responsiveClass: true,
+            nav: false,
+            dots: true,
+             responsive: {
+                0: {
+                    items: 1,
+                    stagePadding: 0,
+                },
+                578: {
+                    items: 2,
+                    stagePadding: 0,
+                },
+                992: {
+                    items: 3,
+                    stagePadding: 0,
+                },
+                1200: {
+                    items: 4,
+                }
+            },
+        })
+    }
+}
+eventSlider();
 
 
     /*-------------------------------------------------------------------------------
@@ -594,84 +630,6 @@
     tslider();
 
 
-    /*-------------------------------------------------------------------------------
-	  case_studies_slider js
-	-------------------------------------------------------------------------------*/
-    function caseStudies() {
-        var CSlider = $(".case_studies_slider");
-        if (CSlider.length) {
-            CSlider.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 3,
-                autoplay: true,
-                smartSpeed: 1000,
-                responsiveClass: true,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    650: {
-                        items: 2,
-                    },
-                    776: {
-                        items: 3,
-                    },
-                    1199: {
-                        items: 3,
-                    },
-                },
-            })
-        }
-    }
-    caseStudies();
-
-    /*-------------------------------------------------------------------------------
-	  app_testimonial_slider js
-	-------------------------------------------------------------------------------*/
-    function videoslider() {
-        var dSlider = $(".digital_video_slider");
-        if (dSlider.length) {
-            dSlider.owlCarousel({
-                loop: true,
-                margin: 30,
-                items: 1,
-                center: true,
-                autoplay: true,
-                smartSpeed: 1000,
-                stagePadding: 200,
-                responsiveClass: true,
-                nav: false,
-                dots: false,
-                responsive: {
-                    0: {
-                        items: 1,
-                        stagePadding: 0,
-                    },
-                    575: {
-                        items: 1,
-                        stagePadding: 100,
-                    },
-                    768: {
-                        items: 1,
-                        stagePadding: 40,
-                    },
-                    992: {
-                        items: 1,
-                        stagePadding: 100,
-                    },
-                    1250: {
-                        items: 1,
-                        stagePadding: 200,
-                    }
-                },
-            })
-        }
-    }
-    videoslider();
-
 
     /*-------------------------------------------------------------------------------
 	  Saasslider js
@@ -694,38 +652,7 @@
     }
     Saasslider();
 
-    /*-------------------------------------------------------------------------------
-	  price tab js
-	-------------------------------------------------------------------------------*/
-    function tab_hover() {
-        var tab = $(".price_tab");
-        if ($(window).width() > 450) {
-            if ($(tab).length > 0) {
-                tab.append('<li class="hover_bg"></li>');
-                if ($('.price_tab li a').hasClass('active_hover')) {
-                    var pLeft = $('.price_tab li a.active_hover').position().left,
-                        pWidth = $('.price_tab li a.active_hover').css('width');
-                    $('.hover_bg').css({
-                        left: pLeft,
-                        width: pWidth
-                    })
-                }
-                $('.price_tab li a').on('click', function () {
-                    $('.price_tab li a').removeClass('active_hover');
-                    $(this).addClass('active_hover');
-                    var pLeft = $('.price_tab li a.active_hover').position().left,
-                        pWidth = $('.price_tab li a.active_hover').css('width');
-                    $('.hover_bg').css({
-                        left: pLeft,
-                        width: pWidth
-                    })
-                })
-            }
-        }
-
-    }
-    tab_hover();
-
+    
     /*-------------------------------------------------------------------------------
 	  selectpickers js
 	-------------------------------------------------------------------------------*/
@@ -733,23 +660,7 @@
         $('.selectpickers').niceSelect();
     }
 
-    /*-------------------------------------------------------------------------------
-	  pr_slider js
-	-------------------------------------------------------------------------------*/
-    function pr_slider() {
-        var pr_image = $('.pr_image')
-        if (pr_image.length) {
-            pr_image.owlCarousel({
-                loop: true,
-                items: 1,
-                autoplay: true,
-                dots: false,
-                thumbs: true,
-                thumbImage: true,
-            });
-        }
-    }
-    pr_slider()
+    
 
     /*-------------------------------------------------------------------------------
 	  cart js
@@ -779,48 +690,6 @@
     });
 
 
-    /*-------------------------------------------------------------------------------
-	  Portfolio isotope js
-	-------------------------------------------------------------------------------*/
-    function portfolioMasonry() {
-        var portfolio = $("#work-portfolio");
-        if (portfolio.length) {
-            portfolio.imagesLoaded(function () {
-                // images have loaded
-                // Activate isotope in container
-                portfolio.isotope({
-                    itemSelector: ".portfolio_item",
-                    layoutMode: 'masonry',
-                    filter: "*",
-                    animationOptions: {
-                        duration: 1000
-                    },
-                    transitionDuration: '0.5s',
-                    masonry: {
-
-                    }
-                });
-
-                // Add isotope click function
-                $("#portfolio_filter div").on('click', function () {
-                    $("#portfolio_filter div").removeClass("active");
-                    $(this).addClass("active");
-
-                    var selector = $(this).attr("data-filter");
-                    portfolio.isotope({
-                        filter: selector,
-                        animationOptions: {
-                            animationDuration: 750,
-                            easing: 'linear',
-                            queue: false
-                        }
-                    })
-                    return false;
-                })
-            })
-        }
-    }
-    portfolioMasonry();
 
     /*-------------------------------------------------------------------------------
 	  jobFilter js
@@ -857,179 +726,8 @@
     jobFilter();
 
 
-    /*-------------------------------------------------------------------------------
-	  blogMasonry js
-	-------------------------------------------------------------------------------*/
-    function blogMasonry() {
-        var blog = $("#blog_masonry")
-        if (blog.length) {
-            blog.imagesLoaded(function () {
-                blog.isotope({
-                    layoutMode: 'masonry',
-                });
-            })
-        }
-    }
-    blogMasonry();
-
-    /*-------------------------------------------------------------------------------
-	  popup js
-	-------------------------------------------------------------------------------*/
-    function popupGallery() {
-        if ($(".img_popup,.image-link").length) {
-            $(".img_popup,.image-link").each(function () {
-                $(".img_popup,.image-link").magnificPopup({
-                    type: 'image',
-                    tLoading: 'Loading image #%curr%...',
-                    removalDelay: 300,
-                    mainClass: 'mfp-with-zoom mfp-img-mobile',
-                    gallery: {
-                        enabled: true,
-                        navigateByImgClick: true,
-                        preload: [0, 1] // Will preload 0 - before current, and 1 after the current image,
-                    }
-                });
-            })
-        }
-        if ($('.popup-youtube').length) {
-            $('.popup-youtube').magnificPopup({
-                disableOn: 700,
-                type: 'iframe',
-                removalDelay: 160,
-                preloader: false,
-                fixedContentPos: false,
-                mainClass: 'mfp-with-zoom mfp-img-mobile',
-            });
-            $('.popup-youtube').magnificPopup({
-                disableOn: 700,
-                type: 'iframe',
-                mainClass: 'mfp-fade',
-                removalDelay: 160,
-                preloader: false,
-                fixedContentPos: false
-            });
-        }
-    }
-    popupGallery();
-
-    /*-------------------------------------------------------------------------------
-	  mapBox js
-	-------------------------------------------------------------------------------*/
-    if ($('#mapBox').length) {
-        var $lat = $('#mapBox').data('lat');
-        var $lon = $('#mapBox').data('lon');
-        var $zoom = $('#mapBox').data('zoom');
-        var $marker = $('#mapBox').data('marker');
-        var $info = $('#mapBox').data('info');
-        var $markerLat = $('#mapBox').data('mlat');
-        var $markerLon = $('#mapBox').data('mlon');
-        var map = new GMaps({
-            el: '#mapBox',
-            lat: $lat,
-            lng: $lon,
-            scrollwheel: false,
-            scaleControl: true,
-            streetViewControl: false,
-            panControl: true,
-            disableDoubleClickZoom: true,
-            mapTypeControl: false,
-            zoom: $zoom,
-        });
-        map.addMarker({
-            lat: $markerLat,
-            lng: $markerLon,
-            icon: $marker,
-            infoWindow: {
-                content: $info
-            }
-        })
-    }
 
 
-    /*-------------------------------------------------------------------------------
-	  MAILCHIMP js
-	-------------------------------------------------------------------------------*/
-    if ($(".mailchimp").length > 0) {
-        $(".mailchimp").ajaxChimp({
-            callback: mailchimpCallback,
-            url: "http://droitlab.us15.list-manage.com/subscribe/post?u=0fa954b1e090d4269d21abef5&id=a80b5aedb0" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
-        });
-    }
-    if ($(".mailchimp_two").length > 0) {
-        $(".mailchimp_two").ajaxChimp({
-            callback: mailchimpCallback,
-            url: "https://droitthemes.us19.list-manage.com/subscribe/post?u=5d334217e146b083fe74171bf&amp;id=0e45662e8c" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
-        });
-    }
-    $(".memail").on("focus", function () {
-        $(".mchimp-errmessage").fadeOut();
-        $(".mchimp-sucmessage").fadeOut();
-    });
-    $(".memail").on("keydown", function () {
-        $(".mchimp-errmessage").fadeOut();
-        $(".mchimp-sucmessage").fadeOut();
-    });
-    $(".memail").on("click", function () {
-        $(".memail").val("");
-    });
-
-    function mailchimpCallback(resp) {
-        if (resp.result === "success") {
-            $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
-            $(".mchimp-sucmessage").fadeOut(500);
-        } else if (resp.result === "error") {
-            $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
-        }
-    }
-
-    /*-------------------------------------------------------------------------------
-	  Parallax Effect js
-	-------------------------------------------------------------------------------*/
-    function parallaxEffect() {
-        if ($('.parallax-effect').length) {
-            $('.parallax-effect').parallax();
-        };
-    }
-    parallaxEffect();
-
-    /*-------------------------------------------------------------------------------
-	  Counter js
-	-------------------------------------------------------------------------------*/
-    function counterUp() {
-        if ($('.counter').length) {
-            $('.counter').counterUp({
-                delay: 1,
-                time: 500
-            });
-        };
-    };
-
-    counterUp();
-
-    /*-------------------------------------------------------------------------------
-	  progress bar js
-	-------------------------------------------------------------------------------*/
-    function circle_progress() {
-        if ($('.circle').length) {
-            $(".circle").each(function () {
-                $(".circle").appear(function () {
-                    $('.circle').circleProgress({
-                        startAngle: -14.1,
-                        size: 200,
-                        duration: 9000,
-                        easing: "circleProgressEase",
-                        emptyFill: '#f1f1fa ',
-                        lineCap: 'round',
-                        thickness: 10,
-                    })
-                }, {
-                    triggerOnce: true,
-                    offset: 'bottom-in-view'
-                })
-            })
-        }
-    }
-    circle_progress();
 
     /*-------------------------------------------------------------------------------
 	  preloader js
@@ -1055,23 +753,7 @@
     if ($('[data-toggle="tooltip"]').length) {
         $('[data-toggle="tooltip"]').tooltip()
     }
-    /*-------------------------------------------------------------------------------
-	  Pricing Filter js
-	-------------------------------------------------------------------------------*/
-    if ($("#slider-range").length) {
-        $("#slider-range").slider({
-            range: true,
-            min: 5,
-            max: 150,
-            values: [5, 100],
-            slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-            }
-        });
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-            " - $" + $("#slider-range").slider("values", 1));
-    }
-
+   
     /*-------------------------------------------------------------------------------
 	  search js
 	-------------------------------------------------------------------------------*/

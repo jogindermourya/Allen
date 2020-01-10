@@ -1708,7 +1708,7 @@
         display: block;
     }
     .menu > .nav-item.submenu .dropdown-menu .nav-item{
-        padding: 0px 25px;
+        /* padding: 0px 25px; */
     }
     .menu > .nav-item.submenu .dropdown-menu{
         box-shadow: none;
@@ -2749,10 +2749,21 @@
 }
 
 @media (max-width:768px){
-    .navbar-brand {
-        width: 30%;
-        margin-left: 10px;}
-        .onlineenqury_btn{margin-top: 14px;}
+ 
+    .navbar-brand {width: 30%;margin-left: 10px;}
+    .onlineenqury_btn{margin-top: 14px;}
+    .slider_content{display: none;}
+    .homeslider-wraper .owl-dots{width: 100%;}
+    .slider_area{margin-top: 87px;}
+    .imglu{display: none;}
+    .latestInfo .developer_product_content .develor_tab .nav-item{margin: 0px 11%;}
+    .courses_area {background: transparent;}
+    .sec_pad,.prototype_service_info{padding: 40px 0px;}
+    .price_tab .nav-item { margin: 0px 15px;}
+    .protype_img{display: none!important;}
+    .appshow_carousel .owl-next,.appshow_carousel .owl-prev {position: static;    margin-top: 22px;}
+    .appshow_carousel .owl-nav{text-align: center;}
+    .homeslider-wraper { min-height: 100%;}
 
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
         display: none;
@@ -2839,9 +2850,7 @@
     .agency_testimonial_info .testimonial_slider{
         padding: 50px 20px;
     }
-    .sec_pad,.prototype_service_info{
-        padding: 70px 0px;
-    }
+   
     .sec_title.mb_70{
         margin-bottom: 50px
     }
@@ -3554,6 +3563,11 @@
         height: auto;
         padding-bottom: 70px;
     }
+
+
+
+
+
 }
 
 
