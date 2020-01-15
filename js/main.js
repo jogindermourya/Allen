@@ -47,8 +47,33 @@
         // $('#notificationbanner').modal('show');
     });
 
- 
-    /*-------------------------------------------------------------------------------
+
+ /*------------------------------------------------------------------------------- 
+    Top of the page scrolling button
+    -----------------------------------------------------------------------------*/
+$(document).ready(function(){
+    $(window).scroll(function () {
+           if ($(this).scrollTop() > 50) {
+               $('#back-to-top').fadeIn();
+           } else {
+               $('#back-to-top').fadeOut();
+           }
+       });
+       // scroll body to 0px on click
+       $('#back-to-top').click(function () {
+           $('#back-to-top').tooltip('hide');
+           $('body,html').animate({
+               scrollTop: 0
+           }, 800);
+           return false;
+       });
+       
+       $('#back-to-top').tooltip('show');
+
+});
+
+
+     /*-------------------------------------------------------------------------------
 	  mCustomScrollbar js
 	-------------------------------------------------------------------------------*/
     $(window).on("load", function () {
@@ -72,46 +97,6 @@
     wowAnimation()
 
 
-    /*-------------------------------------------------------------------------------
-	  service_carousel js
-	-------------------------------------------------------------------------------*/
-    function serviceSlider() {
-        var service_slider = $(".service_carousel");
-        if (service_slider.length) {
-            service_slider.owlCarousel({
-                loop: true,
-                margin: 15,
-                items: 4,
-                autoplay: true,
-                smartSpeed: 2000,
-                responsiveClass: true,
-                nav: true,
-                dots: false,
-                stagePadding: 100,
-                navText: [, '<i class="ti-arrow-left"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                        stagePadding: 0,
-                    },
-                    578: {
-                        items: 2,
-                        stagePadding: 0,
-                    },
-                    992: {
-                        items: 3,
-                        stagePadding: 0,
-                    },
-                    1200: {
-                        items: 3,
-                    }
-                },
-            })
-        }
-    }
-    serviceSlider();
-
-
     // Course slider
     function courseSlider() {
         var courses_slider = $(".courses_carousel");
@@ -130,10 +115,14 @@
                     0: {
                         items: 1,
                         stagePadding: 0,
+                        
                     },
-                    578: {
-                        items: 2,
+                   
+                    768: {
+                        items: 3,
                         stagePadding: 0,
+                        margin: 15
+                    
                     },
                     992: {
                         items: 4,
@@ -224,47 +213,9 @@
 
 
 
- /*---------------------------------------------------------------------------------- 
-  Course slider----------------------------------------------------------------*/
-    function courseSlider() {
-        var courses_slider = $(".courses_carousel");
-        if (courses_slider.length) {
-            courses_slider.owlCarousel({
-                loop: true,
-                margin: 30,
-                items: 4,
-                autoplay: false,
-                smartSpeed: 1000,
-                responsiveClass: true,
-                nav: true,
-                dots: false,
-                navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right "></i>'],
-                 responsive: {
-                    0: {
-                        items: 1,
-                        stagePadding: 0,
-                    },
-                    578: {
-                        items: 2,
-                        stagePadding: 0,
-                    },
-                    992: {
-                        items: 4,
-                        stagePadding: 0,
-                    },
-                    1200: {
-                        items: 4,
-                    }
-                },
-            })
-        }
-    }
-    courseSlider();
-
-
 
  /*---------------------------------------------------------------------------------- 
-  Course slider----------------------------------------------------------------*/
+  event slider----------------------------------------------------------------*/
   function eventSlider() {
     var event_slider = $(".event_carousel");
     if (event_slider.length) {
@@ -300,359 +251,7 @@
 eventSlider();
 
 
-    /*-------------------------------------------------------------------------------
-	  about_img_slider js
-	-------------------------------------------------------------------------------*/
-    function aboutSlider() {
-        var reviews_slider2 = $(".about_img_slider");
-        if (reviews_slider2.length) {
-            reviews_slider2.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 1,
-                nav: false,
-                autoplay: false,
-                smartSpeed: 2000,
-                responsiveClass: true,
-            })
-        }
-    }
-    aboutSlider();
 
-    /*-------------------------------------------------------------------------------
-	  pos_slider js
-	-------------------------------------------------------------------------------*/
-    function posSlider() {
-        var posS = $(".pos_slider");
-        if (posS.length) {
-            posS.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 1,
-                dots: false,
-                nav: false,
-                autoplay: true,
-                slideSpeed: 300,
-                mouseDrag: false,
-                animateIn: 'fadeIn',
-                animateOut: 'fadeOut',
-                responsiveClass: true,
-            })
-        }
-    }
-    posSlider();
-
-    /*-------------------------------------------------------------------------------
-	  feedback_slider js
-	-------------------------------------------------------------------------------*/
-    function feedbackSlider() {
-        var feedback_slider = $(".feedback_slider");
-        if (feedback_slider.length) {
-            feedback_slider.owlCarousel({
-                loop: true,
-                margin: 25,
-                items: 3,
-                nav: false,
-                center: true,
-                autoplay: false,
-                smartSpeed: 2000,
-                stagePadding: 0,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    776: {
-                        items: 2,
-                        stagePadding: 0,
-                    },
-                    1199: {
-                        items: 3,
-                        stagePadding: 0,
-                    }
-                },
-            })
-        }
-    }
-    feedbackSlider();
-
-    function EventSlider() {
-        var event_slider = $(".event_team_slider");
-        if (event_slider.length) {
-            event_slider.owlCarousel({
-                loop: true,
-                margin: 25,
-                items: 3,
-                nav: false,
-                autoplay: false,
-                smartSpeed: 2000,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    576: {
-                        items: 2,
-                    },
-                    1199: {
-                        items: 3,
-                    }
-                },
-            })
-        }
-    }
-    EventSlider();
-
-    /*-------------------------------------------------------------------------------
-	  feedback_slider two js
-	-------------------------------------------------------------------------------*/
-    function feedbackSlider_two() {
-        var feedback_sliders = $("#fslider_two");
-        if (feedback_sliders.length) {
-            feedback_sliders.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 2,
-                nav: true,
-                autoplay: false,
-                smartSpeed: 2000,
-                stagePadding: 0,
-                responsiveClass: true,
-                navText: ['<i class="ti-angle-left"></i><i class="ti-angle-right"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    776: {
-                        items: 2,
-                    },
-                    1199: {
-                        items: 2,
-                    }
-                },
-            })
-        }
-    }
-    feedbackSlider_two();
-
-    /*-------------------------------------------------------------------------------
-	  fslider_three js
-	-------------------------------------------------------------------------------*/
-    function feedbackSlider_three() {
-        var feedback_sliders_three = $("#fslider_three");
-        if (feedback_sliders_three.length) {
-            feedback_sliders_three.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 2,
-                nav: true,
-                autoplay: false,
-                smartSpeed: 2000,
-                stagePadding: 0,
-                responsiveClass: true,
-                navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    776: {
-                        items: 2,
-                    },
-                    1199: {
-                        items: 3,
-                    }
-                },
-            })
-        }
-    }
-    feedbackSlider_three();
-
-    /*-------------------------------------------------------------------------------
-	  erp_testimonial_info js
-	-------------------------------------------------------------------------------*/
-    function erpTestimonial() {
-        var erpT = $(".erp_testimonial_info");
-        if (erpT.length) {
-            erpT.owlCarousel({
-                loop: true,
-                margin: 0,
-                items: 2,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                smartSpeed: 2000,
-                stagePadding: 0,
-                responsiveClass: true,
-                navText: ['<i class="arrow_left"></i>', '<i class="arrow_right"></i>'],
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    776: {
-                        items: 2,
-                    },
-                    1199: {
-                        items: 2,
-                    }
-                },
-            })
-        }
-    }
-    erpTestimonial();
-
-
-    /*-------------------------------------------------------------------------------
-       testimonial_slider js
-     -------------------------------------------------------------------------------*/
-    function testimonialSlider() {
-        var testimonialSlider = $(".testimonial_slider");
-        if (testimonialSlider.length) {
-            testimonialSlider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 1,
-                autoplay: true,
-                smartSpeed: 2500,
-                autoplaySpeed: false,
-                responsiveClass: true,
-                nav: true,
-                dot: true,
-                stagePadding: 0,
-                navContainer: '.agency_testimonial_info',
-                navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-            })
-        }
-    }
-    testimonialSlider();
-
-    /*-------------------------------------------------------------------------------
-	  app_testimonial_slider js
-	-------------------------------------------------------------------------------*/
-    function app_testimonialSlider() {
-        var app_testimonialSlider = $(".app_testimonial_slider");
-        if (app_testimonialSlider.length) {
-            app_testimonialSlider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 1,
-                autoplay: true,
-                smartSpeed: 2000,
-                autoplaySpeed: true,
-                responsiveClass: true,
-                nav: true,
-                dot: true,
-                navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right"></i>'],
-                navContainer: '.nav_container'
-            })
-        }
-    }
-    app_testimonialSlider();
-
-
-    /*-------------------------------------------------------------------------------
-	  app_screenshot_slider js
-	-------------------------------------------------------------------------------*/
-    function appScreenshot() {
-        var app_screenshotSlider = $(".app_screenshot_slider");
-        if (app_screenshotSlider.length) {
-            app_screenshotSlider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 5,
-                autoplay: false,
-                smartSpeed: 2000,
-                responsiveClass: true,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    650: {
-                        items: 2,
-                    },
-                    776: {
-                        items: 4,
-                    },
-                    1199: {
-                        items: 5,
-                    },
-                },
-            })
-        }
-    }
-
-    appScreenshot();
-
-    /*-------------------------------------------------------------------------------
-	  pr_slider js
-	-------------------------------------------------------------------------------*/
-    function prslider() {
-        var p_Slider = $(".pr_slider");
-        if (p_Slider.length) {
-            p_Slider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 1,
-                autoplay: true,
-                smartSpeed: 1000,
-                responsiveClass: true,
-                nav: true,
-                dots: false,
-                navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-                navContainer: '.pr_slider'
-            })
-        }
-    }
-    prslider();
-
-
-    /*-------------------------------------------------------------------------------
-	  app_testimonial_slider js
-	-------------------------------------------------------------------------------*/
-    function tslider() {
-        var tSlider = $(".testimonial_slider_four");
-        if (tSlider.length) {
-            tSlider.owlCarousel({
-                loop: true,
-                margin: 10,
-                items: 1,
-                autoplay: true,
-                smartSpeed: 1000,
-                responsiveClass: true,
-                nav: true,
-                dots: false,
-                navText: ['<i class="ti-angle-left"></i>', '<i class="ti-angle-right"></i>'],
-                navContainer: '.testimonial_title'
-            })
-        }
-    }
-    tslider();
-
-
-
-    /*-------------------------------------------------------------------------------
-	  Saasslider js
-	-------------------------------------------------------------------------------*/
-    function Saasslider() {
-        var SSlider = $(".saas_banner_area_three");
-        if (SSlider.length) {
-            SSlider.owlCarousel({
-                loop: true,
-                margin: 30,
-                items: 1,
-                animateOut: 'fadeOut',
-                autoplay: true,
-                smartSpeed: 1000,
-                responsiveClass: true,
-                nav: false,
-                dots: true,
-            })
-        }
-    }
-    Saasslider();
-
-    
     /*-------------------------------------------------------------------------------
 	  selectpickers js
 	-------------------------------------------------------------------------------*/
@@ -660,71 +259,7 @@ eventSlider();
         $('.selectpickers').niceSelect();
     }
 
-    
-
-    /*-------------------------------------------------------------------------------
-	  cart js
-	-------------------------------------------------------------------------------*/
-    $('.ar_top').on('click', function () {
-        var getID = $(this).next().attr('id');
-        var result = document.getElementById(getID);
-        var qty = result.value;
-        $('.proceed_to_checkout .update-cart').removeAttr('disabled');
-        if (!isNaN(qty)) {
-            result.value++;
-        } else {
-            return false;
-        }
-    });
-
-    $('.ar_down').on('click', function () {
-        var getID = $(this).prev().attr('id');
-        var result = document.getElementById(getID);
-        var qty = result.value;
-        $('.proceed_to_checkout .update-cart').removeAttr('disabled');
-        if (!isNaN(qty) && qty > 0) {
-            result.value--;
-        } else {
-            return false;
-        }
-    });
-
-
-
-    /*-------------------------------------------------------------------------------
-	  jobFilter js
-	-------------------------------------------------------------------------------*/
-    function jobFilter() {
-        var jobsfilter = $("#tab_filter");
-        if (jobsfilter.length) {
-            jobsfilter.imagesLoaded(function () {
-                // images have loaded
-                // Activate isotope in container
-                jobsfilter.isotope({
-                    itemSelector: ".item",
-                });
-
-                // Add isotope click function
-                $("#job_filter div").on('click', function () {
-                    $("#job_filter div").removeClass("active");
-                    $(this).addClass("active");
-
-                    var selector = $(this).attr("data-filter");
-                    jobsfilter.isotope({
-                        filter: selector,
-                        animationOptions: {
-                            animationDuration: 750,
-                            easing: 'linear',
-                            queue: false
-                        }
-                    })
-                    return false;
-                })
-            })
-        }
-    }
-    jobFilter();
-
+   
 
 
 
@@ -832,28 +367,36 @@ eventSlider();
         });
     };
 
-    function ppTestislider() {
-        var PSlider = $(".pp_testimonial_slider");
-        if (PSlider.length) {
-            PSlider.slick({
-                autoplay: true,
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                autoplaySpeed: 3000,
-                speed: 1000,
-                vertical: true,
-                dots: false,
-                arrows: true,
-                prevArrow: '.prev',
-                nextArrow: '.next',
-            });
-        }
-    }
-    ppTestislider();
-
-
-
-
-
 
 })(jQuery)
+
+
+//  Counter site 
+$('.counter-count').each(function () {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+
+//CENTERS SEARCH OPTION
+
+function search_animal() { 
+let input = document.getElementById('searchbar').value 
+input=input.toLowerCase(); 
+let x = document.getElementsByClassName('center'); 
+
+for (i = 0; i < x.length; i++) {  
+if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+    x[i].style.display="none"; 
+} 
+else { 
+    x[i].style.display="list-item";                  
+} } 
+} 		
